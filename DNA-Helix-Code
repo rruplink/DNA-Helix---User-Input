@@ -1,0 +1,41 @@
+""" DNA Python Program - Sololearn Knowledge Exercise
+
+Enter a letter, number, or symbol, and the number of turns you want. Then just watch!"""
+
+symbol=input("Enter ONE letter, number, or symbol: ")
+"""The user inputs the letter they want to build the helix with"""
+if len(symbol)>1:
+        symbol = "#"
+if len(symbol) < 1:
+    symbol = "#"
+"""The above code prevents the user from entering no character, which would cause an error. It also prevents the user from entering multiple characters.
+Which would cause the program to run incorrectly."""
+space = " "
+Turns=input("Enter how many turns you want: ")
+Turnsint= int(Turns)
+
+def bids(a,b,c="",d=""):
+    return(a+b+c+d)
+
+"""This prints out the user-selected character in the form of a DNA Helix"""
+for x in range(Turnsint):
+        print(bids(space*19,symbol))
+        print(bids(space*17,symbol*4))
+        print(bids(space*16,symbol*6))
+        print(bids(space*14,symbol*2,space*6,symbol*2))
+        print(bids(space*12,symbol*14))
+        print(bids(space*11,symbol*2,space*12,symbol*2))
+        print(bids(space*11,symbol*16))
+        print(bids(space*12,symbol*2,space*10,symbol*2))
+        print(bids(space*14,symbol*10))
+        print(bids(space*16,symbol*2,space*2,symbol*2))
+        print(bids(space*17,symbol*4))
+        print(bids(space*18,symbol*2))
+
+"""The function wait prevents the program from closing before the user finishes
+running"""
+def wait() :
+        x = 111111111111111111111111111111111111111111111111111
+        while x > 0:
+                x -=1
+wait()
